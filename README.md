@@ -3,7 +3,7 @@
 让等待，慢慢成画。  
 Turn waiting time into a little painting.
 
-[中文介绍](#中文介绍) · [English](#english) · [下载 / Downloads](https://github.com/JackBlack419/waitcanvas/releases/latest) · [反馈问题 / Report a bug](https://github.com/JackBlack419/waitcanvas/issues)
+[在线体验 / Live demo](https://cog-hfxp.upma.site/) · [中文介绍](#中文介绍) · [English](#english) · [下载 / Downloads](https://github.com/JackBlack419/waitcanvas/releases/latest) · [反馈问题 / Report a bug](https://github.com/JackBlack419/waitcanvas/issues)
 
 ## 中文介绍
 
@@ -12,6 +12,12 @@ Turn waiting time into a little painting.
 它包含 **6 种画法、每种 10 幅，共 60 幅作品**。你可以挑选作品、改变颜色、调整绘画速度，再把动画放进自己的网页。
 
 > 本项目由本人vibe coding完成，若有bug，烦请原谅，谢谢
+
+### 在线体验
+
+打开 [等绘展示网站](https://cog-hfxp.upma.site/)，无需下载即可体验。
+
+**小提示：加载“画种总览”时可能有点慢，请耐心等待。**
 
 ### 不懂编程，也想先看看？
 
@@ -96,6 +102,12 @@ WaitCanvas is a free, open-source collection of painting animations for loading 
 It includes **60 paintings: 6 styles with 10 different compositions each**. Choose a painting, change its colors and speed, and use it on your own website.
 
 > I built this project through vibe coding. If you find bugs, please bear with me. Thank you.
+
+### Live demo
+
+Visit the [WaitCanvas demo website](https://cog-hfxp.upma.site/) to try it without downloading anything.
+
+**Please note: the painting gallery (“画种总览”) may take a little longer to load. Please allow it some time.**
 
 ### Try it without coding
 
