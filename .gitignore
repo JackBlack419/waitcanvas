@@ -1,0 +1,12 @@
+node_modules/
+dist/downloads/
+*.zip
+*.tar.gz
+.env
+.env.*
+!.env.example
+.openai/
+.sites-local/
+qa/
+.DS_Store
+Thumbs.db

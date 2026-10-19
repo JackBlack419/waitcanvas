@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="等绘 WaitCanvas：为 AI 产品加入原创绘画加载动画。挑选主题、调整品牌色，下载可自托管的免费接入示例。">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>等绘 WaitCanvas — 让等待，慢慢成画</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#studio">跳到绘画工作台</a>
+<header class="site-header wrap">
+  <a href="#" class="brand" aria-label="等绘首页"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M6 27C8 13 17 2 23 5c7 4-7 10-13 10m0 0c-5 2-6 7-1 8 6 2 17-10 20-7 3 3-5 11-11 12"/></svg><strong>等绘</strong><span>WaitCanvas</span></a>
+  <nav aria-label="主导航"><a href="#studio" class="nav-active">绘画工作台</a><a href="./gallery.html">画种总览</a><a href="#guide">接入指南</a><a href="#next">开源说明</a></nav>
+  <div class="header-actions"><span class="version"><i></i> 免费开源 · MIT</span><button id="appearance" class="icon-button" aria-label="切换深色界面" title="切换深色界面"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A8.7 8.7 0 0 1 11 3.2 8.8 8.8 0 1 0 20.8 13Z"/></svg></button></div>
+</header>
+<main>
+  <section class="intro wrap" aria-labelledby="page-title">
+    <div><p class="intro-note">给 AI 产品，多一点从容</p><h1 id="page-title">把等待，画成风景。</h1></div>
+    <p class="intro-copy">让一幅小画，陪用户等到答案。<br>从油画到彩铅，看看一幅画怎样慢慢形成。</p>
+  </section>
+  <section class="studio wrap" id="studio" aria-label="绘画工作台">
+    <aside class="controls">
+      <div class="control-heading"><h2>选择一种画法</h2><span>6 类 · 60 幅</span></div>
+      <div id="theme-options" class="theme-options" role="group" aria-label="绘画主题">
+        <button class="theme-option selected" data-theme="oil" aria-pressed="true"><span class="theme-thumb"><wait-canvas theme="oil" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">油画<small>海边落日</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        <button class="theme-option" data-theme="line" aria-pressed="false"><span class="theme-thumb"><wait-canvas theme="line" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">线条画<small>窗台植物</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        <button class="theme-option" data-theme="crayon" aria-pressed="false"><span class="theme-thumb"><wait-canvas theme="crayon" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">蜡笔画<small>彩虹小镇</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        <button class="theme-option" data-theme="ink" aria-pressed="false"><span class="theme-thumb"><wait-canvas theme="ink" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">国画<small>竹影清风</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        <button class="theme-option" data-theme="sketch" aria-pressed="false"><span class="theme-thumb"><wait-canvas theme="sketch" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">素描<small>苹果与方体</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        <button class="theme-option" data-theme="pencil" aria-pressed="false"><span class="theme-thumb"><wait-canvas theme="pencil" seed="a-little-pause" static></wait-canvas></span><span class="theme-name">彩铅画<small>枝头小鸟</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+      </div>
+      <div class="sample-selector"><div class="label-row"><h3>选择作品</h3><span>每类 10 幅</span></div><div id="sample-options" role="group" aria-label="当前画种的作品"></div></div>
+      <div class="control-group">
+        <div class="label-row"><h3>调成你的颜色</h3><button id="reset-colors" class="text-button">恢复默认</button></div>
+        <div class="colors"><label><input id="primary" type="color" value="#517b70" aria-label="主色"><span>主色</span></label><label><input id="accent" type="color" value="#a8b7a3" aria-label="点缀色"><span>点缀</span></label><label><input id="paper" type="color" value="#f2f3e9" aria-label="画纸底色"><span>画纸</span></label></div>
+        <div class="preset-row" aria-label="配色预设"><button class="palette-preset" data-palette="native">原作</button><button class="palette-preset" data-palette="lilac">雾紫</button><button class="palette-preset" data-palette="blue">海盐</button><button class="palette-preset" data-palette="night">夜色</button></div>
+      </div>
+      <div class="control-group settings">
+        <div class="label-row"><label for="speed">落笔速度</label><output id="speed-value" for="speed">1×</output></div><input type="range" id="speed" min="0.5" max="2" step="0.25" value="1">
+        <div class="label-row layout-label"><span>画布布局</span><div class="segmented" role="group" aria-label="画布布局"><button data-size="large" class="active" aria-pressed="true">宽幅</button><button data-size="compact" aria-pressed="false">卡片</button></div></div>
+        <label class="switch-row"><span>减少动态效果<small>也会遵循系统偏好</small></span><input id="reduce-motion" type="checkbox" role="switch"></label>
+      </div>
+      <div class="seed-panel"><div class="label-row"><label for="seed">画面种子</label><button id="shuffle" class="text-button"><span aria-hidden="true">⤨</span> 换一幅</button></div><input id="seed" value="a-little-pause" maxlength="80" spellcheck="false"><span class="field-hint">相同种子可复现，新任务会随机变化。</span><label class="rotation-option"><input id="rotate-themes" type="checkbox"> 每次任务换一幅</label><label class="rotation-scope-label" for="rotation-scope">轮换范围<select id="rotation-scope"><option value="same">当前画种</option><option value="all">全部画种</option></select></label></div>
+    </aside>
+    <div class="preview-area">
+      <div class="preview-toolbar"><div class="painting-title"><span id="painting-name">海边落日</span><span class="toolbar-rule"></span><span id="painting-subtitle">铺底、叠色，再点亮海面的光</span></div><button id="replay" class="text-button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a7 7 0 1 1 1 7M3 3v5h5"/></svg>重看绘制</button></div>
+      <div class="art-stage" id="art-stage">
+        <div class="art-frame" id="art-frame"><wait-canvas id="main-painting" theme="oil" seed="a-little-pause" state="idle"></wait-canvas></div>
+        <div class="art-caption"><span id="art-caption-title">一幅山色，正在慢慢形成</span><span>WaitCanvas original</span></div>
+      </div>
+      <div class="paint-playback" aria-label="绘制回放"><div class="paint-method"><span id="medium-label">油画</span><span id="painting-method">宽笔铺底 → 短笔叠色 → 波光与高光</span><span id="paint-stage" class="stage-label">逐笔绘制</span><span class="study-count">作品 1/10</span></div><div class="playback-controls"><button id="pause-painting" class="text-button">暂停绘制</button><label for="paint-progress">绘制进程</label><input id="paint-progress" type="range" min="0" max="100" value="0" step="1"><output id="paint-percentage" for="paint-progress">0%</output><button id="view-finished" class="text-button">看成品</button></div><p>可拖动查看落笔过程；此进程仅表示绘画回放。</p></div>
+      <div class="task-panel" aria-label="任务状态演示">
+        <div class="task-status"><span class="status-mark" id="status-mark" aria-hidden="true"></span><div><strong id="status-title" role="status" aria-live="polite">绘制预览</strong><p id="status-detail">这是动画预览，下面可以模拟一次 AI 等待。</p></div></div>
+        <div class="task-setup"><label for="duration">模拟等待</label><select id="duration"><option value="5">5 秒</option><option value="15" selected>15 秒</option><option value="60">60 秒</option><option value="0">直到手动结束</option></select><button id="start-task" class="button primary">开始体验<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 8 6-8 6Z"/></svg></button></div>
+        <div class="task-running" hidden><button id="finish-task" class="button small">立即完成</button><button id="fail-task" class="text-button">模拟失败</button><button id="cancel-task" class="text-button">取消</button></div>
+      </div>
+      <div id="task-result" class="task-result" hidden><span class="result-symbol" aria-hidden="true">✓</span><p><strong>答案已就绪。</strong>任务完成时立即显示结果，画作不会延长等待。</p><button id="again-task" class="text-button">再体验一次</button></div>
+      <div class="preview-footnote"><span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 13 4v4c0 3-5 6-5 6S3 11 3 8V4Z"/><path d="m5.5 7.5 2 2 3-3"/></svg>本地绘制，无需调用 AI</span><span>画面进程不代表任务进度</span></div>
+    </div>
+  </section>
+  <section class="export-section wrap" aria-labelledby="export-title">
+    <div class="export-intro"><span class="section-kicker">把这幅画，带进你的产品</span><h2 id="export-title">调好，即可接入。</h2><p>保留当前主题、配色、种子与落笔速度。<br>下载后可自行托管，无需连接等绘服务。</p><button id="download-demo" class="button primary"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg>下载当前示例</button><a href="./downloads/waitcanvas-free-v0.4.0.zip" download class="package-link">下载完整免费包 <span>v0.4.0 · HTML + React 示例</span></a></div>
+    <div class="code-panel"><div class="code-toolbar"><div class="code-tabs" role="group" aria-label="示例格式"><button data-format="html" class="active" aria-pressed="true">HTML</button><button data-format="react" aria-pressed="false">React</button></div><button id="copy-code" class="copy-button"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="6" width="10" height="11" rx="2"/><path d="M12 6V3H3v10h4"/></svg><span>复制代码</span></button></div><pre tabindex="0" aria-label="当前配置接入代码"><code id="code-output"></code></pre><div class="code-note" id="code-note">将 waitcanvas.js、themes.js、painterly.js 放在同一目录。</div></div>
+  </section>
+  <section class="guide-section wrap" id="guide" aria-labelledby="guide-title"><div class="section-title"><h2 id="guide-title">从小画，到真实产品。</h2><p>三个步骤，把体验交给你的用户。</p></div><div class="steps"><article><span class="step-number">1</span><h3>挑选与调整</h3><p>选主题，设置主色与画纸。保留种子可重现画面，随机种子会改变细节。</p></article><article><span class="step-number">2</span><h3>下载与引入</h3><p>单文件示例可直接打开。完整包包含组件源码、授权和 React 接入例子。</p></article><article><span class="step-number">3</span><h3>跟随真实任务</h3><p>请求开始时设为 loading，完成后设为 success。失败或取消时停止绘制。</p></article></div>
+    <div class="faq-list"><details><summary>这是真正的 AI 生成绘画吗？</summary><p>这些样片由原创绘制规则生成，在浏览器本地逐笔呈现，不调用生图模型。随机种子会改变构图细节，但不等于每次创造一种全新画风。这是为产品设计的绘画回放，不是真人画家作画录像。</p></details><details><summary>可以商用吗？</summary><p>源码、绘制规则和全部原创作品统一采用 MIT 许可，允许使用、修改、分发及商用，保留版权与许可声明即可。<a href="./LICENSES.txt">查看 MIT 全文</a>。旧版本的主题单独限制不适用于 v0.4 交付。</p></details><details><summary>等待很久，或者请求突然完成，会怎样？</summary><p>新样片画完后保留成品并停止绘制，不循环闪白重画。完成、失败和取消由宿主应用传入，组件会停止绘制；结果由你的应用立即展示，不需要等画画完。页面演示是模拟任务，不调用真实 AI。</p></details><details><summary>目前验证了哪些环境？</summary><p>这是 v0.4 开源版。新画种使用 Canvas 逐笔绘制，并保留旧版 SVG 主题接口，提供 React 包装示例；实际验证记录和已知限制见免费包说明。尚未完成全浏览器、真实移动设备和 React 项目集成验证。</p></details><details><summary>会收集我的用户数据吗？</summary><p>组件没有遥测，不读取提示词，也不向等绘上传内容。体验页只在本机保存界面明暗偏好；此版本没有接入第三方统计或表单服务。网站托管平台仍可能处理正常访问所需的基础请求信息。</p></details></div>
+  </section>
+  <section class="next-section wrap" id="next" aria-labelledby="next-title"><div><span class="section-kicker">免费，开源，一起画</span><h2 id="next-title">把小画，带到更多地方。</h2><p>六种画法，每类十幅，代码与全部作品均采用 MIT 许可。<br>你可以免费使用、修改、分发和商用，保留版权与许可声明即可。</p></div><div class="next-details"><div><span>完整源文件</span><strong>组件、作品与工作台</strong><p>本地绘制，无需账号或 AI 接口</p></div><div><span>共同完善</span><strong>欢迎改画作、修代码</strong><p>源码包包含测试、运行与贡献说明</p></div><a class="button secondary" href="./downloads/waitcanvas-source-v0.4.0.zip" download>下载完整项目源码</a><small><a href="https://github.com/JackBlack419/waitcanvas" target="_blank" rel="noopener noreferrer">GitHub 开源仓库 · 欢迎反馈问题</a><br>本项目由本人vibe coding完成，若有bug，烦请原谅，谢谢</small></div></section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="#"><strong>等绘</strong><span>WaitCanvas</span></a><p>让等待，慢慢成画。</p><a href="./LICENSES.txt">源码与主题授权</a><span>原创体验版 v0.4.0</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+</body></html>
