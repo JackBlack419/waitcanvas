@@ -3,7 +3,7 @@
 让等待，慢慢成画。  
 Turn waiting time into a little painting.
 
-[在线体验 / Live demo](https://cog-hfxp.upma.site/) · [中文介绍](#中文介绍) · [English](#english) · [下载 / Downloads](https://github.com/JackBlack419/waitcanvas/releases/latest) · [反馈问题 / Report a bug](https://github.com/JackBlack419/waitcanvas/issues)
+[在线体验 / Live demo](https://cog-hfxp.upma.site/) · [中文介绍](#中文介绍) · [English](#english) · [源码下载 / Source code](https://github.com/JackBlack419/waitcanvas/archive/refs/heads/main.zip) · [反馈问题 / Report a bug](https://github.com/JackBlack419/waitcanvas/issues)
 
 ## 中文介绍
 
@@ -21,12 +21,7 @@ Turn waiting time into a little painting.
 
 ### 不懂编程，也想先看看？
 
-1. 打开 [下载页面（Releases）](https://github.com/JackBlack419/waitcanvas/releases/latest)。
-2. 下载 **waitcanvas-free-v0.4.1.zip**，然后解压。
-3. 用浏览器打开解压后的 **demo.html**。
-4. 选择画种与作品，点击“开始”观看绘画，或点击“看成品”。
-
-这个示例已把绘画代码装进一个 HTML 文件，不需要账号、API 密钥或付费服务。
+直接打开 [在线展示网站](https://cog-hfxp.upma.site/)，选择画种与作品即可体验，不需要下载、账号或 API 密钥。想在电脑上使用，请按下面的步骤运行完整工作台；运行打包命令后，也会生成可直接用浏览器打开的 dist/downloads/demo.html。
 
 ### 有哪些画法？
 
@@ -111,12 +106,7 @@ Visit the [WaitCanvas demo website](https://cog-hfxp.upma.site/) to try it witho
 
 ### Try it without coding
 
-1. Open the [Downloads page (Releases)](https://github.com/JackBlack419/waitcanvas/releases/latest).
-2. Download and unzip **waitcanvas-free-v0.4.1.zip**.
-3. Open the extracted **demo.html** in your browser.
-4. Choose a style and painting. Click “开始” (Start) to watch it being drawn, or “看成品” (Finished picture) to see the result.
-
-This demo is a single HTML file. You do not need an account, API key, or paid service. The current website controls are in Chinese; this guide explains how to get started.
+Open the [live demo](https://cog-hfxp.upma.site/) and choose a painting. No download, account, or API key is needed. To use it on your computer, follow the studio setup below. The packaging command also creates dist/downloads/demo.html, which you can open directly in a browser. The current website controls are in Chinese.
 
 ### What is included?
 
