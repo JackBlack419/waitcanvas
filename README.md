@@ -17,12 +17,12 @@ Turn waiting time into a little painting.
 
 打开 [等绘展示网站](https://cog-hfxp.upma.site/)，无需下载即可体验。
 
-**小提示：加载“画种总览”时可能有点慢，请耐心等待。**
+**小提示：加载“画种总览”时可能有点慢，请耐心等待。页面会显示等待提示，画作准备好后自动收起。**
 
 ### 不懂编程，也想先看看？
 
 1. 打开 [下载页面（Releases）](https://github.com/JackBlack419/waitcanvas/releases/latest)。
-2. 下载 **waitcanvas-free-v0.4.0.zip**，然后解压。
+2. 下载 **waitcanvas-free-v0.4.1.zip**，然后解压。
 3. 用浏览器打开解压后的 **demo.html**。
 4. 选择画种与作品，点击“开始”观看绘画，或点击“看成品”。
 
@@ -107,12 +107,12 @@ It includes **60 paintings: 6 styles with 10 different compositions each**. Choo
 
 Visit the [WaitCanvas demo website](https://cog-hfxp.upma.site/) to try it without downloading anything.
 
-**Please note: the painting gallery (“画种总览”) may take a little longer to load. Please allow it some time.**
+**Please note: the painting gallery (“画种总览”) may take a little longer to load. A waiting message is shown while the paintings are being prepared, and disappears when they are ready.**
 
 ### Try it without coding
 
 1. Open the [Downloads page (Releases)](https://github.com/JackBlack419/waitcanvas/releases/latest).
-2. Download and unzip **waitcanvas-free-v0.4.0.zip**.
+2. Download and unzip **waitcanvas-free-v0.4.1.zip**.
 3. Open the extracted **demo.html** in your browser.
 4. Choose a style and painting. Click “开始” (Start) to watch it being drawn, or “看成品” (Finished picture) to see the result.
 

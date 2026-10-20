@@ -22,7 +22,7 @@ SOFTWARE.
 
 Scope: This MIT license covers all source code, procedural drawing rules,
 brush definitions, original sample artwork, documentation and interface
-shipped in WaitCanvas v0.4.0, including legacy original themes.
+shipped in WaitCanvas v0.4.1, including legacy original themes.
 There are no additional theme resale or competing-library restrictions
 in this release. Earlier release restrictions do not apply to v0.4 files.
 

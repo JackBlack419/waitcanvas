@@ -1,4 +1,4 @@
-# WaitCanvas v0.4.0 免费体验包
+# WaitCanvas v0.4.1 免费体验包
 
 ## 先运行
 
@@ -89,7 +89,7 @@ v0.2 回放参数：progress="0" 到 "100" 可定位绘制进程，存在此属�
 
 v0.4 作品参数：sample 选择具体构图，ID 列表见 catalog.js。seed 只改变作品细节。素描十幅重新设计，起形阶段分配 24% 回放时间，随后为明暗、交叉排线和压暗刻画。绘制阶段由 paint-progress 事件的 detail.stage 提供，detail.progress 为回放百分比。
 
-完整组件包为 waitcanvas-free-v0.4.0.zip；完整工作台、脚本、测试与文档源码包为 waitcanvas-source-v0.4.0.zip。源码包不包含站点标识或凭证，可依 README 在本地独立运行。
+完整组件包为 waitcanvas-free-v0.4.1.zip；完整工作台、脚本、测试与文档源码包为 waitcanvas-source-v0.4.1.zip。源码包不包含站点标识或凭证，可依 README 在本地独立运行。
 
 公开仓库 / Public repository: https://github.com/JackBlack419/waitcanvas
 
